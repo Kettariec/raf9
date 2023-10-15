@@ -21,9 +21,13 @@ class Raf9:
                 your_ings = self.__choose_ingredients()
                 your_ings.sort()
                 result = self.find_cocktail(your_ings)
-                if result is None:
+                if len(your_ings) == 0:
+                    print('Всего доброго, приходите ещё!')
+                    break
+                elif result is None:
                     self.save_cocktail(your_ings)
                     print(f'Создан новый коктейль с ингредиентами {your_ings}')
+                    break
                 else:
                     print(f'Вы выбрали коктейль {result}')
                     break
